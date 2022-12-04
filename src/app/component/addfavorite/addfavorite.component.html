@@ -1,0 +1,41 @@
+<div class="container mt-3">
+    <h5><b>Search for NPM Packages</b></h5>
+    <input type="search" class="form-control" id="myInput" onkeyup="myFunction()"  title="Type  here to search package">
+    
+    <input type="radio" id="reactjs" name="fav_language" value="ReactJS">
+    <label for="html">reactjs</label><br>
+    <input type="radio" id="rerudex" name="fav_language" value="reRedux">
+    <label for="css">react-redux</label><br>
+    <input type="radio" id="react18" name="fav_language" value="React18">
+    <label for="javascript">react-i18next</label><br>
+    <input type="radio" id="other" name="fav_language" value="Others">
+    <label for="other">.........</label>
+<div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</div>
+<div>
+    <form>
+        <h6><b>Why it is your fav?</b></h6>
+        <input type="text" name="message" rows="4" cols="50">
+        <br>
+    </form><br>
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</div>
+</div>
